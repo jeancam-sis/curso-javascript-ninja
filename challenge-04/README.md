@@ -29,40 +29,75 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+
+
+var carro = {marca: 'Fiat';
+             modelo: 'Sedan';
+             placa: JHF2593;
+             ano: 2017;
+             cor: 'Turquesa;
+             quantasPortas: 4;
+             assentos: 5;
+             quantidadePessoas: 0;
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
-passado por parâmetro.
+passada por parâmetro.
 */
-?
+
+    carro.mudarCor = function (novaCor){
+        return carro.cor = novaCor
+  }
+
+  console.log(carro.mudarCor('azul'))
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+
+carro.obterCor = function() {
+    return carro.cor
+}
+
+console.log(carro.obterCor())
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+
+carro.obterModelo = function () {
+    return carro.modelo
+}
+
+console.log(carro.obterModelo())
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+
+carro.obterMarca = function(){
+    return carro.marca
+}
+
+console.log(carro.obterMarca())
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+
+carro.obterMarcaModelo = function(){
+    return `Esse carro é um ${carro.marca} ${carro.modelo}`
+}
+
+console.log(carro.obterMarcaModelo())
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
 seguintes características:
-- Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
+- Ele deverá receber por parâmetro o número de pessoas que entrarão no carro. Esse
 número não precisa encher o carro, você poderá acrescentar as pessoas aos
 poucos.
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
@@ -75,7 +110,44 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+
+carro.adicionar = function(passageiros) {
+    if (passageiros <= 5) {
+        total += passageiros
+        subtracao = 5 - total
+    }
+    if (passageiros > 1 && passageiros <= 3) {        
+        return `Já temos ${passageiros} ${pessoa} no carro!. Você pode adicionar mais ${subtracao} ${pessoa}.`        
+    }
+    if (passageiros === 4) {
+        pessoa = pessoa
+        return `Já temos ${passageiros} ${pessoa} no carro!. Você pode adicionar mais ${subtracao} pessoa.`
+    }    
+    if (passageiros > 5) {
+        return `Você não pode adicionar mais do que 5 pessoas no carro! Reduza a quantidade de pessoas.`
+    }
+    if (passageiros === 5) {
+        return `Já temos ${passageiros} ${pessoa} no carro!. Você não pode adicionar mais ${pessoa}.`
+    }
+    if (passageiros < 0 || passageiros === undefined) {
+        return `Informe uma quantidade válida de pessoas!`
+    } 
+    if (passageiros === 1) {
+        pessoa = 'pessoa'
+            return `Já temos ${passageiros} ${pessoa} no carro! Você pode adicionar mais ${subtracao} pessoas.`
+    } 
+    if (passageiros > 1 && passageiros < 5) {
+            return `Já temos ${passageiros} ${pessoa} no carro!`
+    }   
+    if (passageiros === 0) {
+            return `Não temos nenhum passageiro à bordo! Ainda cabem 5 pessoas no carro.`
+    } 
+    if (passageiros === 5) {
+            return `Já temos ${passageiros} ${pessoa} no carro! O veículo está lotado!`
+    }    
+}
+
+console.log(carro.adicionar())
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
