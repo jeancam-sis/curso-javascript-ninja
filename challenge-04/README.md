@@ -165,7 +165,7 @@ Qual a cor atual do carro?
 // E agora, qual a cor do carro?
 ?
 
-// Mude a cor do carro para verde musgo.
+// Mude a cor do carro para verde musgo
 ?
 
 // E agora, qual a cor do carro?
